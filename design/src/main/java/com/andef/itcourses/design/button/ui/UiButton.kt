@@ -6,20 +6,18 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
 import com.andef.itcourses.design.R
 import com.andef.itcourses.design.button.type.UiButtonType
+import com.andef.itcourses.design.text.ui.UiText
 import com.andef.itcourses.design.ui.theme.DarkGray
 import com.andef.itcourses.design.ui.theme.Green
 import com.andef.itcourses.design.ui.theme.White
@@ -73,7 +71,7 @@ private fun ColorUiButton(
         shape = shape,
         onClick = onClick
     ) {
-        Text(text = text, fontSize = 14.sp, fontFamily = FontFamily(Font(R.font.roboto)))
+        UiText(text = text, fontSize = 14.sp)
     }
 }
 

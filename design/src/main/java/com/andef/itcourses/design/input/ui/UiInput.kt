@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
@@ -19,6 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.andef.itcourses.design.R
+import com.andef.itcourses.design.text.ui.UiText
 import com.andef.itcourses.design.ui.theme.LightGray
 import com.andef.itcourses.design.ui.theme.Stroke
 import com.andef.itcourses.design.ui.theme.White
@@ -34,25 +34,18 @@ fun UiInput(
     onValueChange: (String) -> Unit
 ) {
     Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(space = 6.dp)) {
-        Text(
+        UiText(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Start,
             text = upText,
             color = White,
-            fontSize = 16.sp,
-            fontFamily = FontFamily(Font(R.font.roboto))
+            fontSize = 16.sp
         )
         TextField(
             modifier = Modifier.fillMaxWidth(),
             colors = textFieldColors(),
             value = value,
-            placeholder = {
-                Text(
-                    text = placeholderText,
-                    fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.roboto))
-                )
-            },
+            placeholder = { UiText(text = placeholderText, fontSize = 14.sp) },
             keyboardOptions = keyboardOptions,
             visualTransformation = visualTransformation,
             shape = shape,

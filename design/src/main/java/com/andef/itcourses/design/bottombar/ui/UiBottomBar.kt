@@ -7,15 +7,12 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.andef.itcourses.design.R
 import com.andef.itcourses.design.bottombar.item.UiBottomBarItem
+import com.andef.itcourses.design.text.ui.UiText
 import com.andef.itcourses.design.ui.theme.DarkGray
 import com.andef.itcourses.design.ui.theme.Green
 import com.andef.itcourses.design.ui.theme.LightGray
@@ -50,13 +47,7 @@ fun UiBottomBar(
                                 contentDescription = item.contentDescription
                             )
                         },
-                        label = {
-                            Text(
-                                text = item.text,
-                                fontSize = 12.sp,
-                                fontFamily = FontFamily(Font(R.font.roboto))
-                            )
-                        },
+                        label = { UiText(text = item.text, fontSize = 12.sp) },
                         colors = navigationBarItemColors()
                     )
                 }

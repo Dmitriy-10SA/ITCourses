@@ -35,6 +35,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.andef.itcourses.design.R
+import com.andef.itcourses.design.text.ui.UiText
 import com.andef.itcourses.design.ui.theme.Green
 import com.andef.itcourses.design.ui.theme.LightGray
 import com.andef.itcourses.design.ui.theme.Stroke
@@ -142,10 +143,9 @@ private fun ColumnScope.SortByDateButton(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(4.dp)
         ) {
-            Text(
+            UiText(
                 text = "По дате добавления",
                 fontSize = 14.sp,
-                fontFamily = FontFamily(Font(R.font.roboto)),
                 color = Green,
                 textDecoration = if (isSortByDateActive) {
                     TextDecoration.Underline

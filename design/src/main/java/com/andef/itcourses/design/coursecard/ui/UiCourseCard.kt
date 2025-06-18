@@ -27,14 +27,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.andef.itcourses.design.R
 import com.andef.itcourses.design.dateFormatter
+import com.andef.itcourses.design.text.ui.UiText
 import com.andef.itcourses.design.ui.theme.DarkGray
 import com.andef.itcourses.design.ui.theme.Green
 import com.andef.itcourses.design.ui.theme.Stroke
@@ -156,10 +155,9 @@ private fun BoxScope.OnImageRatingAndDateWithLikeFlag(
                 text = "%.1f".format(course.rate),
                 color = White,
                 fontSize = 12.sp,
-                fontFamily = FontFamily(Font(R.font.roboto))
             )
         }
-        Text(
+        UiText(
             modifier = Modifier
                 .background(
                     color = Color(0xFF32333A).copy(alpha = 0.8f),
@@ -168,7 +166,6 @@ private fun BoxScope.OnImageRatingAndDateWithLikeFlag(
                 .padding(horizontal = 6.dp, vertical = 1.dp),
             fontSize = 12.sp,
             color = White,
-            fontFamily = FontFamily(Font(R.font.roboto)),
             text = course.startDate.toJavaLocalDate().format(dateFormatter)
         )
     }
@@ -176,35 +173,28 @@ private fun BoxScope.OnImageRatingAndDateWithLikeFlag(
 
 @Composable
 private fun ColumnScope.TitleAndText(course: Course) {
-    Text(
+    UiText(
         modifier = Modifier.fillMaxWidth(),
         textAlign = TextAlign.Left,
         text = course.title,
         fontSize = 16.sp,
-        color = White,
-        fontFamily = FontFamily(Font(R.font.roboto))
+        color = White
     )
-    Text(
+    UiText(
         text = course.text,
         modifier = Modifier.fillMaxWidth(),
         textAlign = TextAlign.Left,
         fontSize = 12.sp,
         color = Stroke,
         maxLines = 2,
-        overflow = TextOverflow.Ellipsis,
-        fontFamily = FontFamily(Font(R.font.roboto))
+        overflow = TextOverflow.Ellipsis
     )
 }
 
 @Composable
 private fun ColumnScope.PriceAndMoreDetailButton(course: Course, onMoreDetailedClick: () -> Unit) {
     Row {
-        Text(
-            text = "${course.price} ₽",
-            fontSize = 16.sp,
-            color = White,
-            fontFamily = FontFamily(Font(R.font.roboto))
-        )
+        UiText(text = "${course.price} ₽", fontSize = 16.sp, color = White)
         Spacer(modifier = Modifier.weight(1f))
         Row(
             modifier = Modifier
@@ -213,12 +203,7 @@ private fun ColumnScope.PriceAndMoreDetailButton(course: Course, onMoreDetailedC
             horizontalArrangement = Arrangement.spacedBy(4.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(
-                text = "Подробнее",
-                fontSize = 12.sp,
-                color = Green,
-                fontFamily = FontFamily(Font(R.font.roboto))
-            )
+            UiText(text = "Подробнее", fontSize = 12.sp, color = Green)
             Icon(
                 tint = Green,
                 painter = painterResource(R.drawable.right_arrow),
