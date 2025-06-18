@@ -15,7 +15,7 @@ fun AllCoursesScreen(
     viewModelFactory: ViewModelFactory
 ) {
     val viewModel: AllCoursesViewModel = viewModel(factory = viewModelFactory)
-    viewModel.state.collectAsState()
+    val state = viewModel.state.collectAsState()
 
     LaunchedEffect(Unit) {
         viewModel.send(AllCoursesIntent.LoadCourses)
