@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    //Dagger 2
+    id("kotlin-kapt")
 }
 
 android {
@@ -57,6 +60,10 @@ dependencies {
 
     //Kotlin datetime
     implementation(libs.kotlinx.datetime)
+
+    //Dagger 2
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

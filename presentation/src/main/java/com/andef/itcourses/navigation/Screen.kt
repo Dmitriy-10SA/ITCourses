@@ -46,5 +46,10 @@ sealed class Screen(val route: String) {
                 route = MainScreens.AccountScreen.route
             )
         )
+        val mainScreensAsRoutes = listOf(
+            MainScreens.CoursesScreens.route,
+            MainScreens.FavoritesScreen.route,
+            MainScreens.AccountScreen.route
+        )
     }
 }

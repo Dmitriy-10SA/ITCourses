@@ -9,6 +9,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.andef.itcourses.design.bottombar.item.UiBottomBarItem
@@ -43,7 +44,7 @@ fun UiBottomBar(
                         onClick = { onItemClick(item) },
                         icon = {
                             Icon(
-                                painter = item.icon,
+                                painter = painterResource(item.iconResId),
                                 contentDescription = item.contentDescription
                             )
                         },
