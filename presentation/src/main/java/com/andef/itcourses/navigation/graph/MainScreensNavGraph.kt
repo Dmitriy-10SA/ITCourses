@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.andef.itcourses.ViewModelFactory
 import com.andef.itcourses.navigation.Screen
+import com.andef.itcourses.presentation.allcourses.AllCoursesScreen
 
 fun NavGraphBuilder.mainScreensNavGraph(
     navHostController: NavHostController,
@@ -22,7 +23,11 @@ fun NavGraphBuilder.mainScreensNavGraph(
             route = Screen.MainScreens.CoursesScreens.route
         ) {
             composable(route = Screen.MainScreens.CoursesScreens.AllCoursesScreen.route) {
-
+                AllCoursesScreen(
+                    navHostController = navHostController,
+                    paddingValues = paddingValues,
+                    viewModelFactory = viewModelFactory
+                )
             }
             composable(route = Screen.MainScreens.CoursesScreens.CourseInfoScreen.route) {
 

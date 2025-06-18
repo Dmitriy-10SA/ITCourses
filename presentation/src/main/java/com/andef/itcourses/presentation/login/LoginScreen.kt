@@ -1,5 +1,6 @@
 package com.andef.itcourses.presentation.login
 
+import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -20,9 +21,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -108,13 +111,15 @@ private fun EmailAndPasswordInput(
         keyboardOptions = KeyboardOptions(
             keyboardType = KeyboardType.Password,
             imeAction = ImeAction.Done
-        )
+        ),
+        visualTransformation = PasswordVisualTransformation()
     )
 }
 
 @Composable
 private fun ActionButtons(navHostController: NavHostController, viewModel: LoginViewModel) {
     val keyboard = LocalSoftwareKeyboardController.current
+    val context = LocalContext.current
     UiButton(
         modifier = Modifier.fillMaxWidth(),
         type = UiButtonType.Green(
@@ -125,6 +130,9 @@ private fun ActionButtons(navHostController: NavHostController, viewModel: Login
                     LoginIntent.Login(
                         onSuccess = { route ->
                             navHostController.navigate(route) { popUpTo(0) }
+                        },
+                        onError = { msg ->
+                            Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
                         }
                     )
                 )

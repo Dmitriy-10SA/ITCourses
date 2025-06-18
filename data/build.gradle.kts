@@ -39,9 +39,18 @@ dependencies {
     //Kotlin datetime
     implementation(libs.kotlinx.datetime)
 
+    //domain
+    implementation(project(":domain"))
+
     //Dagger 2
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
+
+    //Retrofit 2 + OkHttp
+    implementation(libs.gson)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

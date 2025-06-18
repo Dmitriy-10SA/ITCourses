@@ -38,7 +38,7 @@ import com.andef.itcourses.design.ui.theme.DarkGray
 import com.andef.itcourses.design.ui.theme.Green
 import com.andef.itcourses.design.ui.theme.Stroke
 import com.andef.itcourses.design.ui.theme.White
-import com.andef.itcourses.domain.Course
+import com.andef.itcourses.domain.entities.Course
 import kotlinx.datetime.toJavaLocalDate
 
 @Composable

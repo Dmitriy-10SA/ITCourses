@@ -17,7 +17,7 @@ class LoginViewModel @Inject constructor() : ViewModel() {
             }
 
             is LoginIntent.Login -> {
-                login(onSuccess = intent.onSuccess)
+                login(onSuccess = intent.onSuccess, onError = intent.onError)
             }
 
             is LoginIntent.PasswordInput -> {
@@ -26,9 +26,13 @@ class LoginViewModel @Inject constructor() : ViewModel() {
         }
     }
 
-    private fun login(onSuccess: (String) -> Unit) {
+    private fun login(onSuccess: (String) -> Unit, onError: (String) -> Unit) {
         if (_state.value.isCorrectState) {
             onSuccess(Screen.MainScreens.route)
+        } else if (!isValidEmail(_state.value.email)) {
+            onError("Проверьте верность email!")
+        } else {
+            onError("Введите пароль!")
         }
     }
 

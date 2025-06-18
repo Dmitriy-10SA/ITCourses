@@ -1,4 +1,4 @@
-package com.andef.itcourses.domain
+package com.andef.itcourses.domain.entities
 
 import kotlinx.datetime.LocalDate
 
