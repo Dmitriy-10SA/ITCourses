@@ -33,6 +33,8 @@ android {
 }
 
 dependencies {
+    //Kotlin datetime
+    implementation(libs.kotlinx.datetime)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

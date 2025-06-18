@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -75,7 +76,7 @@ fun UiSearchBar(
 }
 
 @Composable
-private fun SearchBarAndFilter(
+private fun ColumnScope.SearchBarAndFilter(
     placeholderText: String,
     value: String,
     onValueChange: (String) -> Unit,
@@ -128,7 +129,7 @@ private fun SearchBarAndFilter(
 }
 
 @Composable
-private fun SortByDateButton(
+private fun ColumnScope.SortByDateButton(
     modifier: Modifier = Modifier,
     isSortByDateActive: Boolean,
     onClick: () -> Unit
