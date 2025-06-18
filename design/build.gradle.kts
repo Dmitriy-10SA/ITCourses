@@ -40,6 +40,9 @@ dependencies {
     //domain
     implementation(project(":domain"))
 
+    //Kotlin datetime
+    implementation(libs.kotlinx.datetime)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
