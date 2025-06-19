@@ -1,4 +1,4 @@
-package com.andef.itcourses.data.dto
+package com.andef.itcourses.data.network.dto
 
 import com.google.gson.annotations.SerializedName
 
@@ -10,7 +10,7 @@ data class CourseDto(
     @SerializedName("text")
     val text: String,
     @SerializedName("price")
-    val price: Int,
+    val price: String,
     @SerializedName("rate")
     val rate: Float,
     @SerializedName("startDate")

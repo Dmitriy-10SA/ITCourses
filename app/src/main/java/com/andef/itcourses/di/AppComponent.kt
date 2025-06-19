@@ -4,6 +4,7 @@ import android.app.Application
 import com.andef.itcourses.MainActivity
 import com.andef.itcourses.ViewModelFactory
 import com.andef.itcourses.di.course.CourseApiServiceModule
+import com.andef.itcourses.di.course.CourseDaoModule
 import com.andef.itcourses.di.course.CourseRepositoryModule
 import com.andef.itcourses.di.viewmodel.ViewModelModule
 import dagger.BindsInstance
@@ -15,7 +16,8 @@ import javax.inject.Singleton
     modules = [
         ViewModelModule::class,
         CourseApiServiceModule::class,
-        CourseRepositoryModule::class
+        CourseRepositoryModule::class,
+        CourseDaoModule::class
     ]
 )
 interface AppComponent {

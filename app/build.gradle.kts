@@ -5,6 +5,9 @@ plugins {
 
     //Dagger 2
     id("kotlin-kapt")
+
+    //Room
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -64,6 +67,11 @@ dependencies {
     //Dagger 2
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
+
+    //Room
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

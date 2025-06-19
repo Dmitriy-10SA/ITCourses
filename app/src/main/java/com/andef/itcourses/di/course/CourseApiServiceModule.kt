@@ -1,7 +1,7 @@
 package com.andef.itcourses.di.course
 
 import com.andef.itcourses.data.ApiFactory
-import com.andef.itcourses.data.api.CourseApiService
+import com.andef.itcourses.data.network.api.CourseApiService
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

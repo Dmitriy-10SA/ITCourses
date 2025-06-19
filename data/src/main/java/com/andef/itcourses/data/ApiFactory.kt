@@ -1,6 +1,6 @@
 package com.andef.itcourses.data
 
-import com.andef.itcourses.data.api.CourseApiService
+import com.andef.itcourses.data.network.api.CourseApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

@@ -150,11 +150,7 @@ private fun ActionButtons(navHostController: NavHostController, viewModel: Login
         UiText(
             modifier = Modifier
                 .clip(shape = RoundedCornerShape(30.dp))
-                .clickable(
-                    onClick = {
-                        //TODO("Данную кнопку делать не нужно")
-                    }
-                ),
+                .clickable(onClick = {}),
             text = "Регистрация",
             color = Green,
             fontSize = 12.sp
@@ -164,11 +160,7 @@ private fun ActionButtons(navHostController: NavHostController, viewModel: Login
     UiText(
         modifier = Modifier
             .clip(shape = RoundedCornerShape(30.dp))
-            .clickable(
-                onClick = {
-                    //TODO("Данную кнопку делать не нужно")
-                }
-            ),
+            .clickable(onClick = {}),
         text = "Забыл пароль",
         color = Green,
         fontSize = 12.sp
