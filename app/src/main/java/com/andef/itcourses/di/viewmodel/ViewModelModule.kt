@@ -2,6 +2,7 @@ package com.andef.itcourses.di.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.andef.itcourses.presentation.allcourses.AllCoursesViewModel
+import com.andef.itcourses.presentation.courseinfo.CourseInfoViewModel
 import com.andef.itcourses.presentation.favorites.FavoritesViewModel
 import com.andef.itcourses.presentation.login.LoginViewModel
 import dagger.Binds
@@ -24,4 +25,9 @@ interface ViewModelModule {
     @IntoMap
     @ViewModelKey(FavoritesViewModel::class)
     fun bindFavoritesViewModel(impl: FavoritesViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CourseInfoViewModel::class)
+    fun bindCourseInfoViewModel(impl: CourseInfoViewModel): ViewModel
 }

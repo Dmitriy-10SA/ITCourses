@@ -12,6 +12,7 @@ import com.andef.itcourses.ViewModelFactory
 import com.andef.itcourses.domain.entities.Course
 import com.andef.itcourses.navigation.Screen
 import com.andef.itcourses.presentation.allcourses.AllCoursesScreen
+import com.andef.itcourses.presentation.courseinfo.CourseInfoScreen
 import com.andef.itcourses.presentation.favorites.FavoritesScreen
 import kotlinx.datetime.LocalDate
 
@@ -66,7 +67,7 @@ fun NavGraphBuilder.mainScreensNavGraph(
                     ?: throw IllegalArgumentException()
                 val publishDate = Uri.decode(it.arguments?.getString(Screen.PUBLISH_DATE_PARAM))
                     ?: throw IllegalArgumentException()
-                Course(
+                val course = Course(
                     id = id,
                     title = title,
                     text = text,
@@ -75,6 +76,12 @@ fun NavGraphBuilder.mainScreensNavGraph(
                     startDate = LocalDate.parse(startDate),
                     hasLike = hasLike,
                     publishDate = LocalDate.parse(publishDate)
+                )
+                CourseInfoScreen(
+                    course = course,
+                    navHostController = navHostController,
+                    paddingValues = paddingValues,
+                    viewModelFactory = viewModelFactory
                 )
             }
         }

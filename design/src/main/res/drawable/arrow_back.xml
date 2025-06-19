@@ -1,0 +1,23 @@
+<!-- res/drawable/image_7.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="21dp"
+    android:height="12dp"
+    android:viewportWidth="21"
+    android:viewportHeight="12">
+
+    <path
+        android:fillColor="#151515"
+        android:pathData="M20.9953,5.98481
+                          C20.9953,5.43381 20.5483,4.98781 19.9973,4.98781
+                          L4.43282,4.99781
+                          L7.40152,1.9978
+                          L5.99532,0.591797
+                          L1.27652,5.27882
+                          C0.886018,5.66982 0.886018,6.32581 1.27652,6.71681
+                          L5.99532,11.4038
+                          L7.40152,9.99782
+                          L4.43282,6.99781
+                          L19.9973,6.98281
+                          C20.5483,6.98281 20.9953,6.53581 20.9953,5.98481
+                          Z" />
+</vector>
