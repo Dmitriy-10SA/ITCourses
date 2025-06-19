@@ -15,7 +15,7 @@ fun AppNavGraph(
     viewModelFactory: ViewModelFactory,
     paddingValues: PaddingValues
 ) {
-    NavHost(navController = navHostController, startDestination = Screen.MainScreens.route) {
+    NavHost(navController = navHostController, startDestination = Screen.LoginScreen.route) {
         composable(route = Screen.LoginScreen.route) {
             LoginScreen(
                 navHostController = navHostController,
