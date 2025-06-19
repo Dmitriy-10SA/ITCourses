@@ -4,6 +4,9 @@ plugins {
 
     //Dagger 2
     id("kotlin-kapt")
+
+    //Room
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -39,9 +42,23 @@ dependencies {
     //Kotlin datetime
     implementation(libs.kotlinx.datetime)
 
+    //domain
+    implementation(project(":domain"))
+
     //Dagger 2
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)
+
+    //Retrofit 2 + OkHttp
+    implementation(libs.gson)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
+
+    //Room
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

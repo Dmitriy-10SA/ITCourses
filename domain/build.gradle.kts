@@ -18,6 +18,9 @@ dependencies {
     //Kotlin datetime
     implementation(libs.kotlinx.datetime)
 
+    //Coroutines + Flow
+    implementation(libs.kotlinx.coroutines.core)
+
     //Dagger 2
     implementation(libs.dagger)
     kapt(libs.dagger.compiler)

@@ -38,14 +38,15 @@ import com.andef.itcourses.design.ui.theme.DarkGray
 import com.andef.itcourses.design.ui.theme.Green
 import com.andef.itcourses.design.ui.theme.Stroke
 import com.andef.itcourses.design.ui.theme.White
-import com.andef.itcourses.domain.Course
+import com.andef.itcourses.domain.entities.Course
 import kotlinx.datetime.toJavaLocalDate
 
 @Composable
 fun UiCourseCard(
     modifier: Modifier = Modifier,
     course: Course,
-    onLikeClick: (Boolean) -> Unit,
+    isFavorite: Boolean,
+    onLikeClick: () -> Unit,
     onMoreDetailedClick: () -> Unit
 ) {
     val image = if (course.id == 100 || course.id == 103) {
@@ -67,7 +68,8 @@ fun UiCourseCard(
             image = image,
             course = course,
             onMoreDetailedClick = onMoreDetailedClick,
-            onLikeClick = onLikeClick
+            onLikeClick = onLikeClick,
+            isFavorite = isFavorite
         )
     }
 }
@@ -76,8 +78,9 @@ fun UiCourseCard(
 private fun MainContent(
     image: Int,
     course: Course,
+    isFavorite: Boolean,
     onMoreDetailedClick: () -> Unit,
-    onLikeClick: (Boolean) -> Unit,
+    onLikeClick: () -> Unit,
 ) {
     Column {
         Box {
@@ -90,7 +93,11 @@ private fun MainContent(
                 painter = painterResource(image),
                 contentDescription = "Обложка курса"
             )
-            OnImageRatingAndDateWithLikeFlag(course = course, onLikeClick = onLikeClick)
+            OnImageRatingAndDateWithLikeFlag(
+                course = course,
+                onLikeClick = onLikeClick,
+                isFavorite = isFavorite
+            )
         }
         Box(
             modifier = Modifier
@@ -112,19 +119,18 @@ private fun MainContent(
 @Composable
 private fun BoxScope.OnImageRatingAndDateWithLikeFlag(
     course: Course,
-    onLikeClick: (Boolean) -> Unit,
+    isFavorite: Boolean,
+    onLikeClick: () -> Unit,
 ) {
     IconButton(
         modifier = Modifier.align(Alignment.TopEnd),
         colors = IconButtonDefaults.iconButtonColors(
             containerColor = Color(0xFF32333A).copy(alpha = 0.8f)
         ),
-        onClick = {
-            onLikeClick(!course.hasLike)
-        }
+        onClick = onLikeClick
     ) {
         Icon(
-            tint = if (course.hasLike) Green else White,
+            tint = if (isFavorite) Green else White,
             painter = painterResource(R.drawable.like_flag),
             contentDescription = "Флажок добавления в избранное"
         )
